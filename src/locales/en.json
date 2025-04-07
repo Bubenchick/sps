@@ -1,10 +1,53 @@
 {
-  "global": {
-    "order": "Order Now"
-  },
+  "global": {},
   "home": {
-    "title": "SuperPuper Service"
+    "heroTitle": "Super Puper Service",
+    "heroCta": "Order Now",
+    "heroDescription": {
+      "paragraph1": "Experience the next generation of super-puper technology that will revolutionize the way you work and play.",
+      "paragraph2": "Our service provides the most efficient and cost-effective solution for all your super-puper needs."
+    }
   },
+
+  "pricing": {
+    "title": "Choose Your Plan",
+    "orderButton": "Order",
+    "plans": {
+      "free": {
+        "title": "Free",
+        "price": "Free",
+        "description": "Perfect for beginners",
+        "features": {
+          "feature1": "10 super-pupers per month",
+          "feature2": "Access to basic features",
+          "feature3": "No hidden charges"
+        }
+      },
+      "basic": {
+        "title": "Basic",
+        "price": "€9.99 per month",
+        "description": "Ideal for professionals",
+        "features": {
+          "feature1": "100 super-pupers per month",
+          "feature2": "Everything from the Free plan",
+          "feature3": "Priority support"
+        }
+      },
+      "advanced": {
+        "title": "Advanced",
+        "price": "€29.99 per month",
+        "description": "For power users",
+        "features": {
+          "feature1": "500 super-pupers per month",
+          "feature2": "All platform features",
+          "feature3": "Advanced analytics",
+          "feature4": "24/7 priority support"
+        },
+        "additionalInfo": "Each additional 100 super-pupers available for €5.99"
+      }
+    }
+  },
+
   "nav": {
     "home": "Home",
     "terms": "Terms of service",

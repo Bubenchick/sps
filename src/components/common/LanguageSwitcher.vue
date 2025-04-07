@@ -1,12 +1,13 @@
+<!-- TODO надо свитчер сделать -->
 <template>
   <div class="language-switcher">
     <BaseButton
-      v-for="lang in availableLangs"
+      v-for="lang in langs"
       :key="lang.code"
       :kind="langStore.language === lang.code ? 'primary' : 'ghost'"
       @click="setLanguage(lang.code)"
     >
-      {{ lang.label }} {{ lang.flag }}
+      {{ lang.label }}
     </BaseButton>
   </div>
 </template>
@@ -20,9 +21,9 @@ const { locale } = useI18n()
 const langStore = useLangStore()
 
 // TODO что-то с немингами делаем по-человечески ага
-const availableLangs: { code: AvailableLangs; label: string; flag: string }[] = [
-  { code: 'ru', label: 'Ru', flag: '🇷🇺' },
-  { code: 'en', label: 'En', flag: '🇺🇸' },
+const langs: { code: AvailableLangs; label: string }[] = [
+  { code: 'ru', label: '🇷🇺' },
+  { code: 'en', label: '🇺🇸' },
 ]
 
 function setLanguage(lang: AvailableLangs) {

@@ -16,9 +16,13 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 <style scoped>
 .app-header {
   align-items: center;
+  background-color: var(--color-surface);
   display: flex;
   gap: 24px;
-  padding: 12px;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .app-header__language-switcher {

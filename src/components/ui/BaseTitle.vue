@@ -43,23 +43,23 @@ const props = withDefaults(defineProps<IProps>(), {
 }
 
 .base-title--h2 {
-  font: var(--typography-h1);
+  font: var(--typography-h2);
 }
 
 .base-title--h3 {
-  font: var(--typography-h1);
+  font: var(--typography-h3);
 }
 
 .base-title--h4 {
-  font: var(--typography-h1);
+  font: var(--typography-h4);
 }
 
 .base-title--h5 {
-  font: var(--typography-h1);
+  font: var(--typography-h5);
 }
 
 .base-title--h6 {
-  font: var(--typography-h1);
+  font: var(--typography-h6);
 }
 
 .base-title--primary {

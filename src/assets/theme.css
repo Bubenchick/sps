@@ -14,7 +14,18 @@
   --typography-text-md: 500 16px/22px var(--font-family);
   --typography-text-lg: 500 18px/24px var(--font-family);
 
-  --color-text-primary: #212121;
-  --color-text-secondary: #424242;
+  --color-text-primary: #f1f1f1;
+  --color-text-secondary: #a0a0a0;
   --color-text-helper: #bdbdbd;
+  --color-text-accent: #42b883;
+
+  --color-white: #ffffff;
+  --color-primary: #42b883;
+  --color-primary-hover: #2f7f5b;
+  --color-ghost: #444444;
+  --color-ghost-hover: #5a5a5a;
+
+  --color-bg: #1f1f1f;
+  --color-surface: #262626;
+  --color-border: #2e2e2e;
 }

@@ -18,6 +18,5 @@ import AppFooter from '@/components/common/AppFooter.vue'
 <style scoped>
 .app-main {
   flex: 1;
-  padding: 12px;
 }
 </style>

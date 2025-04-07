@@ -27,7 +27,7 @@ interface IProps {
   disabled?: boolean
   kind?: 'primary' | 'ghost'
   size?: 'sm' | 'md' | 'lg'
-  type?: 'button' | 'submit' | 'reset'
+  type?: 'button' | 'submit'
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -67,22 +67,21 @@ const tag = computed(() => {
 }
 
 .base-button--primary {
-  background-color: #2196f3;
-  color: #e3f2fd;
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
 }
 
 .base-button--primary:hover {
-  background-color: #82b1ff;
+  background-color: var(--color-primary-hover);
 }
 
 .base-button--ghost {
-  background-color: #ffffff;
-  border: 1px solid #eceff1;
-  color: #263238;
+  background-color: var(--color-ghost);
+  color: var(--color-text-secondary);
 }
 
 .base-button--ghost:hover {
-  background-color: #eceff1;
+  background-color: var(--color-ghost-hover);
 }
 
 .base-button--sm {

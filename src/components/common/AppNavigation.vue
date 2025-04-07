@@ -1,3 +1,4 @@
+<!-- TODO сделать бургер -->
 <template>
   <div class="app-navigation">
     <!-- <RouterLink :to="localePath('home')">{{ t('nav.home') }}</RouterLink> -->
@@ -33,19 +34,23 @@ const { t } = useI18n()
 .app-navigation {
   display: flex;
   gap: 12px;
+  /* TODO убрать если сделаю бургер */
+  overflow-y: auto;
 }
 
 .app-navigation__link {
-  color: #32495d;
-  font-size: 19px;
+  color: var(--color-text-primary);
+  font-size: 16px;
+  /* TODO убрать если сделаю бургер */
+  white-space: nowrap;
 }
 
 .app-navigation__link:hover {
-  color: #15b886;
+  color: var(--color-text-accent);
 }
 
 .app-navigation__link--active {
-  border-bottom: 2px solid #15b886;
-  color: #15b886;
+  border-bottom: 2px solid var(--color-text-accent);
+  color: var(--color-text-accent);
 }
 </style>

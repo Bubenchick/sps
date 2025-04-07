@@ -4,6 +4,7 @@
     :class="[
       'base-text',
       {
+        [`base-text--align-${props.align}`]: props.align,
         [`base-text--${props.kind}`]: props.kind,
         [`base-text--${props.size}`]: props.size,
       },
@@ -14,17 +15,20 @@
 </template>
 
 <script lang="ts" setup>
+type IAlign = 'left' | 'center' | 'right'
 type ISize = 'sm' | 'md' | 'lg'
-type IKind = 'primary' | 'secondary' | 'helper'
+type IKind = 'primary' | 'secondary' | 'accent' | 'helper'
 
 // TODO bold
 interface IProps {
+  align?: IAlign
   kind?: IKind
   size?: ISize
   tag?: keyof HTMLElementTagNameMap
 }
 
 const props = withDefaults(defineProps<IProps>(), {
+  align: 'left',
   kind: 'primary',
   size: 'md',
   tag: 'p',
@@ -57,7 +61,23 @@ const props = withDefaults(defineProps<IProps>(), {
   color: var(--color-text-secondary);
 }
 
+.base-text--accent {
+  color: var(--color-text-accent);
+}
+
 .base-text--helper {
   color: var(--color-text-helper);
+}
+
+.base-text--align-left {
+  text-align: left;
+}
+
+.base-text--align-center {
+  text-align: center;
+}
+
+.base-text--align-right {
+  text-align: right;
 }
 </style>
