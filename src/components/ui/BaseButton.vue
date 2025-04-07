@@ -1,27 +1,51 @@
 <template>
-  <button
+  <component
+    :is="tag"
+    :to="isRouterLink ? to : undefined"
+    :href="isExternalLink ? href : undefined"
+    :target="isExternalLink ? '_blank' : undefined"
     :class="[
       'base-button',
       `base-button--${props.size}`,
       `base-button--${props.kind}`,
       { 'base-button--block': props.block },
     ]"
+    :type="tag === 'button' ? props.type : undefined"
+    :disabled="tag === 'button' ? props.disabled : undefined"
   >
-    <slot></slot>
-  </button>
+    <slot />
+  </component>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
+
 interface IProps {
-  size?: 'sm' | 'md' | 'lg'
-  kind?: 'primary' | 'ghost'
+  href?: string
+  to?: string
   block?: boolean
+  disabled?: boolean
+  kind?: 'primary' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
+  type?: 'button' | 'submit' | 'reset'
 }
 
 const props = withDefaults(defineProps<IProps>(), {
-  size: 'md',
-  kind: 'primary',
   block: false,
+  disabled: false,
+  kind: 'primary',
+  size: 'md',
+  type: 'button',
+})
+
+const isRouterLink = computed(() => props.to != null)
+
+const isExternalLink = computed(() => props.href != null)
+
+const tag = computed(() => {
+  if (isRouterLink.value) return 'RouterLink'
+  if (isExternalLink.value) return 'a'
+  return 'button'
 })
 </script>
 

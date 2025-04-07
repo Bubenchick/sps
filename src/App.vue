@@ -1,15 +1,23 @@
 <template>
-  <TheHeader />
+  <AppHeader />
 
-  <RouterView />
+  <!-- TODO remove wrap later -->
+  <main class="app-main">
+    <RouterView />
+  </main>
 
-  <TheFooter />
+  <AppFooter />
 </template>
 
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import TheHeader from '@/components/common/TheHeader.vue'
-import TheFooter from '@/components/common/TheFooter.vue'
+import AppHeader from '@/components/common/AppHeader.vue'
+import AppFooter from '@/components/common/AppFooter.vue'
 </script>
 
-<style scoped></style>
+<style scoped>
+.app-main {
+  flex: 1;
+  padding: 12px;
+}
+</style>

@@ -1,7 +1,5 @@
 <template>
-  <div class="about">
+  <div class="order">
     <h1>This is an order page</h1>
   </div>
 </template>
-
-<style scoped></style>
