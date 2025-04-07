@@ -1,0 +1,13 @@
+{
+  "global": {
+    "order": "Order Now"
+  },
+  "home": {
+    "title": "SuperPuper Service"
+  },
+  "nav": {
+    "home": "Home",
+    "terms": "Terms of service",
+    "order": "Order"
+  }
+}
