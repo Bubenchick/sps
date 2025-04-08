@@ -17,7 +17,7 @@
 <script lang="ts" setup>
 type IAlign = 'left' | 'center' | 'right'
 type ISize = 'sm' | 'md' | 'lg'
-type IKind = 'primary' | 'secondary' | 'accent' | 'helper'
+type IKind = 'primary' | 'secondary' | 'accent' | 'helper' | 'error'
 
 // TODO bold
 interface IProps {
@@ -67,6 +67,10 @@ const props = withDefaults(defineProps<IProps>(), {
 
 .base-text--helper {
   color: var(--color-text-helper);
+}
+
+.base-text--error {
+  color: var(--color-text-error);
 }
 
 .base-text--align-left {

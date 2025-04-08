@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import PricingCard from './PricingCard.vue'
-import { plans } from './mock'
+import { plans } from './plans'
 </script>
 
 <style scoped>

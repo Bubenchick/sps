@@ -1,5 +1,5 @@
 <template>
-  <div class="tos">
+  <div class="tos-page">
     <section v-html="md"></section>
   </div>
 </template>
@@ -11,10 +11,9 @@ const { md } = useMarkdownTos()
 </script>
 
 <style scoped>
-.tos {
-  max-width: 720px;
+.tos-page {
   margin: 0 auto;
+  max-width: 720px;
   padding: 32px;
-  font-size: 16px;
 }
 </style>

@@ -1,10 +1,9 @@
-export interface PricingCard {
+export interface PricingPlan {
   id: string
   name: string
+  amount: string
   price: string
   description: string
   features: string[]
-  actionText: string
   additionalInfo?: string
-  highlight?: boolean
 }
