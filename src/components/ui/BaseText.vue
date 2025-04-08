@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<IProps>(), {
   margin: 0;
 }
 
-/* TODO line height + letter spacing for all sizes */
+/* TODO letter spacing for all sizes */
 .base-text--sm {
   font: var(--typography-text-sm);
 }

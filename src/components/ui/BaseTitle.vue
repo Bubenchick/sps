@@ -37,7 +37,7 @@ const props = withDefaults(defineProps<IProps>(), {
   margin: 0;
 }
 
-/* TODO line height + letter spacing for all sizes */
+/* TODO letter spacing for all sizes */
 .base-title--h1 {
   font: var(--typography-h1);
 }

@@ -1,8 +1,4 @@
 :root {
-  --font-family:
-    Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-
   --typography-h1: 800 32px/44px var(--font-family);
   --typography-h2: 800 24px/34px var(--font-family);
   --typography-h3: 800 20px/30px var(--font-family);

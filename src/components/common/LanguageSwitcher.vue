@@ -1,36 +1,41 @@
-<!-- TODO надо свитчер сделать -->
 <template>
   <div class="language-switcher">
     <BaseButton
-      v-for="lang in langs"
-      :key="lang.code"
-      :kind="langStore.language === lang.code ? 'primary' : 'ghost'"
-      @click="setLanguage(lang.code)"
+      v-for="{ lang, label } in LANGS"
+      :key="lang"
+      :kind="langStore.language === lang ? 'primary' : 'ghost'"
+      @click="switchLang(lang)"
     >
-      {{ lang.label }}
+      {{ label }}
     </BaseButton>
   </div>
 </template>
 
-<script lang="ts" setup>
-import { useI18n } from 'vue-i18n'
-import { useLangStore, type AvailableLangs } from '@/stores/lang'
-import BaseButton from '../ui/BaseButton.vue'
+<script setup lang="ts">
+import { useRouter, useRoute } from 'vue-router'
+import { useLanguageStore, type AvailableLangs } from '@/stores/useLanguage'
+import BaseButton from '@/components/ui/BaseButton.vue'
+import { getLocalizedPath } from '@/utils/getLocalizedPath'
 
-const { locale } = useI18n()
-const langStore = useLangStore()
-
-// TODO что-то с немингами делаем по-человечески ага
-const langs: { code: AvailableLangs; label: string }[] = [
-  { code: 'ru', label: '🇷🇺' },
-  { code: 'en', label: '🇺🇸' },
+const LANGS: { lang: AvailableLangs; label: string }[] = [
+  { lang: 'en', label: '🇺🇸' },
+  { lang: 'ru', label: '🇷🇺' },
 ]
 
-function setLanguage(lang: AvailableLangs) {
-  if (langStore.language !== lang) {
-    langStore.setLanguage(lang)
-    locale.value = lang
+const router = useRouter()
+const route = useRoute()
+const langStore = useLanguageStore()
+
+const switchLang = (newLang: AvailableLangs) => {
+  if (newLang === langStore.language) {
+    return
   }
+
+  langStore.language = newLang
+
+  const newPath = getLocalizedPath(route.fullPath)
+
+  router.push(newPath)
 }
 </script>
 

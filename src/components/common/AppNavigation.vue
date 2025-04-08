@@ -1,33 +1,28 @@
-<!-- TODO сделать бургер -->
 <template>
-  <div class="app-navigation">
-    <!-- <RouterLink :to="localePath('home')">{{ t('nav.home') }}</RouterLink> -->
-
+  <nav class="app-navigation">
     <RouterLink
-      v-for="(link, index) in navLinks"
+      v-for="(link, index) in NAV_LINKS"
       :key="index"
-      :to="link.path"
+      :to="getLocalizedPath(link.path)"
       class="app-navigation__link"
       active-class="app-navigation__link--active"
     >
       {{ t(link.label) }}
     </RouterLink>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts" setup>
-import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { getLocalizedPath } from '@/utils/getLocalizedPath'
 
-const navLinks = [
+const NAV_LINKS = [
   { path: '/', label: 'nav.home' },
   { path: '/tos', label: 'nav.terms' },
   { path: '/order', label: 'nav.order' },
 ]
 
 const { t } = useI18n()
-
-// const localePath = (name: string) => ({ name, params: { lang: locale.value } })
 </script>
 
 <style scoped>

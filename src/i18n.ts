@@ -1,21 +1,13 @@
 import { createI18n } from 'vue-i18n'
-import EN from '@/locales/en.json'
-import RU from '@/locales/ru.json'
-import { useLangStore } from '@/stores/lang'
-
-const FALLBACK_LOCALE = 'en'
+import en from '@/locales/en.json'
+import ru from '@/locales/ru.json'
 
 export const setupI18n = () => {
-  const langStore = useLangStore()
-
   return createI18n({
     legacy: false,
     globalInjection: true,
-    locale: langStore.language,
-    FALLBACK_LOCALE,
-    messages: {
-      en: EN,
-      ru: RU,
-    },
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages: { en, ru },
   })
 }
