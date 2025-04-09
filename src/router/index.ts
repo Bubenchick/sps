@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { useLanguageStore } from '@/stores/useLanguageStore'
-import type { AvailableLangs } from '@/stores/useLanguageStore'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useLanguageStore } from '@/stores/useLanguageStore';
+import type { AvailableLangs } from '@/stores/useLanguageStore';
 
 // TODO по хорошему не дублировать бы конечно карту
 const routes = [
@@ -44,23 +44,23 @@ const routes = [
 
   { path: '/ru', redirect: '/ru/' },
   { path: '/:pathMatch(.*)*', redirect: '/' },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior: () => ({ top: 0 }),
-})
+});
 
 router.beforeEach((to, _, next) => {
-  const langStore = useLanguageStore()
-  const lang = (to.meta.lang as AvailableLangs) || 'en'
+  const langStore = useLanguageStore();
+  const lang = (to.meta.lang as AvailableLangs) || 'en';
 
   if (langStore.language !== lang) {
-    langStore.language = lang
+    langStore.language = lang;
   }
 
-  next()
-})
+  next();
+});
 
-export default router
+export default router;

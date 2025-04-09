@@ -1,10 +1,10 @@
-import { defineStore } from 'pinia'
-import { useStorage } from '@vueuse/core'
+import { defineStore } from 'pinia';
+import { useStorage } from '@vueuse/core';
 
 export const useOrderStore = defineStore('order', () => {
-  const selectedPlanId = useStorage<string | null>('selected-plan', null)
+  const selectedPlanId = useStorage<string | null>('selected-plan', null);
 
-  const selectPlan = (id: string) => (selectedPlanId.value = id)
+  const selectPlan = (id: string) => (selectedPlanId.value = id);
 
-  return { selectedPlanId, selectPlan }
-})
+  return { selectedPlanId, selectPlan };
+});

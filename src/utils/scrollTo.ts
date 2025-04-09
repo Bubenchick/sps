@@ -1,26 +1,11 @@
 // TODO мб vueuse, но пока так пойдет
+// можно расширить и добавить оффсет или задавать бехейв
 export default function scrollTo(id: string) {
-  const el = document.getElementById(id)
+  const target = document.getElementById(id);
 
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
+  if (target) {
+    target.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    console.warn('Scroll target not found');
   }
 }
-
-// export type ScrollOptions = {
-//   offset?: number
-//   behavior?: ScrollBehavior
-// }
-
-// export default function scrollTo(id: string, options: ScrollOptions = {}) {
-//   const el = document.getElementById(id)
-//   if (!el) return
-
-//   const top = el.getBoundingClientRect().top + window.scrollY
-//   const offset = options.offset ?? 0
-
-//   window.scrollTo({
-//     top: top - offset,
-//     behavior: options.behavior ?? 'smooth',
-//   })
-// }

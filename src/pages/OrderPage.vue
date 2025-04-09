@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import OrderSection from '@/components/section/order/OrderSection.vue'
+  import OrderSection from '@/components/section/order/OrderSection.vue';
 </script>

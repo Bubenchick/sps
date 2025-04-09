@@ -15,70 +15,70 @@
 </template>
 
 <script lang="ts" setup>
-type IAlign = 'left' | 'center' | 'right'
-type IKind = 'primary' | 'secondary'
-type ISize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  type IAlign = 'left' | 'center' | 'right';
+  type IKind = 'primary' | 'secondary';
+  type ISize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-interface IProps {
-  align?: IAlign
-  kind?: IKind
-  size?: ISize
-}
+  interface IProps {
+    align?: IAlign;
+    kind?: IKind;
+    size?: ISize;
+  }
 
-const props = withDefaults(defineProps<IProps>(), {
-  align: 'left',
-  kind: 'primary',
-  size: 'h2',
-})
+  const props = withDefaults(defineProps<IProps>(), {
+    align: 'left',
+    kind: 'primary',
+    size: 'h2',
+  });
 </script>
 
 <style scoped>
-.base-title {
-  margin: 0;
-}
+  .base-title {
+    margin: 0;
+  }
 
-/* TODO letter spacing for all sizes */
-.base-title--h1 {
-  font: var(--typography-h1);
-}
+  /* TODO letter spacing for all sizes */
+  .base-title--h1 {
+    font: var(--typography-h1);
+  }
 
-.base-title--h2 {
-  font: var(--typography-h2);
-}
+  .base-title--h2 {
+    font: var(--typography-h2);
+  }
 
-.base-title--h3 {
-  font: var(--typography-h3);
-}
+  .base-title--h3 {
+    font: var(--typography-h3);
+  }
 
-.base-title--h4 {
-  font: var(--typography-h4);
-}
+  .base-title--h4 {
+    font: var(--typography-h4);
+  }
 
-.base-title--h5 {
-  font: var(--typography-h5);
-}
+  .base-title--h5 {
+    font: var(--typography-h5);
+  }
 
-.base-title--h6 {
-  font: var(--typography-h6);
-}
+  .base-title--h6 {
+    font: var(--typography-h6);
+  }
 
-.base-title--primary {
-  color: var(--color-text-primary);
-}
+  .base-title--primary {
+    color: var(--color-text-primary);
+  }
 
-.base-title--secondary {
-  color: var(--color-text-secondary);
-}
+  .base-title--secondary {
+    color: var(--color-text-secondary);
+  }
 
-.base-title--align-left {
-  text-align: left;
-}
+  .base-title--align-left {
+    text-align: left;
+  }
 
-.base-title--align-center {
-  text-align: center;
-}
+  .base-title--align-center {
+    text-align: center;
+  }
 
-.base-title--align-right {
-  text-align: right;
-}
+  .base-title--align-right {
+    text-align: right;
+  }
 </style>

@@ -4,8 +4,8 @@ import {
   validateEmail,
   validateExpireDate,
   validatePassword,
-} from '@/utils/validators'
-import type { FormField } from './types'
+} from '@/utils/validators';
+import type { FormField } from './types';
 
 export const formFields: FormField[] = [
   {
@@ -51,4 +51,4 @@ export const formFields: FormField[] = [
     required: true,
     validator: (val) => (!validateCVC(val) ? 'invalidCVC' : null),
   },
-]
+];

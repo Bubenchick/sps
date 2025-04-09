@@ -6,15 +6,15 @@
 </template>
 
 <script setup lang="ts">
-import { useMarkdownTos } from '@/composables/useMarkdownTos'
+  import { useMarkdownTos } from '@/composables/useMarkdownTos';
 
-const { md } = useMarkdownTos()
+  const { md } = useMarkdownTos();
 </script>
 
 <style scoped>
-.tos-page {
-  margin: 0 auto;
-  max-width: 720px;
-  padding: 32px;
-}
+  .tos-page {
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 32px;
+  }
 </style>

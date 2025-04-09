@@ -10,13 +10,13 @@
 </template>
 
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
-import AppHeader from '@/components/common/AppHeader.vue'
-import AppFooter from '@/components/common/AppFooter.vue'
+  import { RouterView } from 'vue-router';
+  import AppHeader from '@/components/common/AppHeader.vue';
+  import AppFooter from '@/components/common/AppFooter.vue';
 </script>
 
 <style scoped>
-.app-main {
-  flex: 1;
-}
+  .app-main {
+    flex: 1;
+  }
 </style>

@@ -12,34 +12,34 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter, useRoute } from 'vue-router'
-import { useLanguageStore, type AvailableLangs } from '@/stores/useLanguageStore'
-import BaseButton from '@/components/ui/BaseButton.vue'
-import { getLocalizedPath } from '@/utils/getLocalizedPath'
+  import { useRouter, useRoute } from 'vue-router';
+  import { useLanguageStore, type AvailableLangs } from '@/stores/useLanguageStore';
+  import BaseButton from '@/components/ui/BaseButton.vue';
+  import { getLocalizedPath } from '@/utils/getLocalizedPath';
 
-const LANGS: { lang: AvailableLangs; label: string }[] = [
-  { lang: 'en', label: '🇺🇸' },
-  { lang: 'ru', label: '🇷🇺' },
-]
+  const LANGS: { lang: AvailableLangs; label: string }[] = [
+    { lang: 'en', label: '🇺🇸' },
+    { lang: 'ru', label: '🇷🇺' },
+  ];
 
-const router = useRouter()
-const route = useRoute()
-const langStore = useLanguageStore()
+  const router = useRouter();
+  const route = useRoute();
+  const langStore = useLanguageStore();
 
-const switchLang = (newLang: AvailableLangs) => {
-  if (newLang === langStore.language) {
-    return
-  }
+  const switchLang = (newLang: AvailableLangs) => {
+    if (newLang === langStore.language) {
+      return;
+    }
 
-  langStore.language = newLang
-  const newPath = getLocalizedPath(route.fullPath)
-  router.push(newPath)
-}
+    langStore.language = newLang;
+    const newPath = getLocalizedPath(route.fullPath);
+    router.push(newPath);
+  };
 </script>
 
 <style scoped>
-.language-switcher {
-  display: flex;
-  gap: 8px;
-}
+  .language-switcher {
+    display: flex;
+    gap: 8px;
+  }
 </style>
