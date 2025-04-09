@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { useLanguageStore } from '@/stores/useLanguage'
+import { useLanguageStore } from '@/stores/useLanguageStore'
 import { getLocalizedPath } from '@/utils/getLocalizedPath'
 
 describe('getLocalizedPath', () => {
   beforeEach(() => {
-    vi.mock('@/stores/useLanguage', () => ({
+    vi.mock('@/stores/useLanguageStore', () => ({
       useLanguageStore: vi.fn().mockReturnValue({
         language: 'en',
       }),

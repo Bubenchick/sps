@@ -1,12 +1,13 @@
 import {
-  validateCardNumber,
   validateCVC,
+  validateCardNumber,
   validateEmail,
   validateExpireDate,
+  validatePassword,
 } from '@/utils/validators'
 import type { FormField } from './types'
 
-export const fields: FormField[] = [
+export const formFields: FormField[] = [
   {
     name: 'fullName',
     label: 'Имя',
@@ -17,8 +18,17 @@ export const fields: FormField[] = [
     name: 'email',
     label: 'Email',
     placeholder: 'Ваш email',
+    type: 'email',
     required: true,
     validator: (val) => (!validateEmail(val) ? 'invalidEmail' : null),
+  },
+  {
+    name: 'password',
+    label: 'Пароль',
+    placeholder: 'Придумайте пароль',
+    type: 'password',
+    required: true,
+    validator: (val) => (!validatePassword(val) ? 'invalidPassword' : null),
   },
   {
     name: 'cardNumber',

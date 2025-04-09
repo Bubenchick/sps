@@ -1,10 +1,4 @@
-import { useLanguageStore } from '@/stores/useLanguage'
-
-// TODO подумать и мб вернуть
-// export function getLocalizedPath(path: string, lang: AvailableLangs): string {
-//   const cleanPath = path.replace(/^\/ru/, '') || '/'
-//   return lang === 'en' ? cleanPath : `/ru${cleanPath}`
-// }
+import { useLanguageStore } from '@/stores/useLanguageStore'
 
 export const getLocalizedPath = (path: string) => {
   const lang = useLanguageStore().language

@@ -1,14 +1,25 @@
 <template>
   <section id="pricing" class="pricing-section">
     <div class="pricing-section__grid">
-      <PricingCard v-for="(item, index) in plans" :key="index" :card="item" />
+      <!-- TODO loader -->
+      <BaseText v-if="plansStore.loading">Loading...</BaseText>
+
+      <PricingCard v-else v-for="(item, index) in plansStore.plans" :key="index" :card="item" />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
+import { onMounted } from 'vue'
+import { usePlansStore } from '@/stores/usePlansStore'
+import BaseText from '@/components/ui/BaseText.vue'
 import PricingCard from './PricingCard.vue'
-import { plans } from './plans'
+
+const plansStore = usePlansStore()
+
+onMounted(() => {
+  plansStore.fetchPlans()
+})
 </script>
 
 <style scoped>

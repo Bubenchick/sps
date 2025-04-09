@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 import { setupI18n } from './i18n'
-import { useLanguageStore } from './stores/useLanguage'
+import { useLanguageStore } from './stores/useLanguageStore'
 
 const app = createApp(App)
 

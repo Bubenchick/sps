@@ -1,3 +1,4 @@
+<!-- по хорошему переделать на слоты для ошибки, добавить слот для тайтла + пост/пре иконки + clearable проп ведь не всегда надо чистить -->
 <template>
   <div class="base-input">
     <input v-model="model" class="base-input__input" :type="type" :placeholder :required />
@@ -6,7 +7,8 @@
       ✕
     </BaseButton>
 
-    <BaseText v-if="errorMessage" kind="error" size="sm" class="base-input__error">
+    <!-- TODO мы пока не готовы к большим сообщениям об ошибках -->
+    <BaseText v-if="errorMessage" kind="error" size="xs" class="base-input__error">
       {{ errorMessage }}
     </BaseText>
   </div>
@@ -39,7 +41,7 @@ const clearInput = () => (model.value = '')
   display: flex;
   gap: 12px;
   height: 44px;
-  margin: 28px 0;
+  margin-bottom: 28px;
   padding: 0 12px;
   position: relative;
 }
@@ -64,7 +66,7 @@ const clearInput = () => (model.value = '')
 /* TODO обернуть инпут и кнопку в контейнер и сделать все на флексах */
 .base-input__error {
   position: absolute;
-  bottom: -22px;
+  bottom: -24px;
   left: 14px;
 }
 </style>

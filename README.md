@@ -1,45 +1,50 @@
 # sps
 
-This template should help get you started developing with Vue 3 in Vite.
+Технологии: Vite.js, TypeScript, Vue 3, Pinia, Tailwind CSS, Vue i18n.
+Поддержка i18n: английский/русский.
+Весь контент в задании можно использовать произвольный.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-yarn
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-yarn dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-yarn build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-yarn test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+- Главная.
+  - Пути: / en-версия, /ru/ ru-версия.
+  - Шапка с лого и навигацией.
+  - Секция про сервис:
+    - заголовок;
+    - два параграфа описания;
+    - кнопка (которая на самом деле ссылка) — call to action — "Order now"/«Заказать сейчас», которая ведёт к следующей секции;
+    - у секции есть большая фоновая картинка;
+  - Секция с тремя карточками тарифов:
+    - бесплатный – 10 супер-пуперов;
+    - базовый — 100 супер-пуперов;
+    - продвинутый — 500 супер-пуперов;
+      - каждые дополнительные 100 супер-пуперов за отдельную цену.
+    - каждая карточка содержит:
+      - название тарифа;
+      - цену за месяц в € или «бесплатно»;
+      - короткий параграф описания: на предложение или два;
+      - список фич;
+      - кнопку «Заказать».
+  - Подвал с лого и навигацией.
+- Условия использования. Это два markdown-файла для en/ru-версий:
+  - Пути: /tos en-версия, /ru/tos – ru-версия.
+  - Состоит из нескольких секций вида h2 + ol > li.
+  - Содержимое не важно — можно просто нагенерировать lorem ipsum или с помощью чат-боте.
+  - У страницы те же шапка и подвал, что у главной.
+- Форма заказа услуги (тарифа):
+  - Можно сделать в виде отдельной страницы или в виде диалога.
+  - Форма состоит из двух секций:
+    - Краткий список тарифов:
+      - Каждая карточка содережит:
+        - индикатор выбранного тарифа;
+        - название тарифа;
+        - количество супер-пуперов в тарифе;
+        - цена.
+      - Можно выбрать другой тариф.
+    - Секция с полями и кнопкой submit:
+      - полное имя;
+      - email;
+      - пароль;
+      - карточка для оплаты: номер, месяц/год, cvc;
+      - кнопка «Создать аккаунт», она же submit;
+      - все поля обязытельные.
+  - При успешной отправке появляется сообщение что, «аккуант создан, пожалуйста проверьте входящие сообщения».
+  - Если были ошибки, то подсвеетить поле с ошибкой и показать что это за ошибка.

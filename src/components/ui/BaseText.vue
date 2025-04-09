@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 type IAlign = 'left' | 'center' | 'right'
-type ISize = 'sm' | 'md' | 'lg'
+type ISize = 'xs' | 'sm' | 'md' | 'lg'
 type IKind = 'primary' | 'secondary' | 'accent' | 'helper' | 'error'
 
 // TODO bold
@@ -41,6 +41,10 @@ const props = withDefaults(defineProps<IProps>(), {
 }
 
 /* TODO letter spacing for all sizes */
+.base-text--xs {
+  font: var(--typography-text-xs);
+}
+
 .base-text--sm {
   font: var(--typography-text-sm);
 }

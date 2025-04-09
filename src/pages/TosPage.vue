@@ -1,3 +1,4 @@
+<!-- TODO лоадер / оглавление с якорями и скроллом -->
 <template>
   <div class="tos-page">
     <section v-html="md"></section>

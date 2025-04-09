@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { useRouter, useRoute } from 'vue-router'
-import { useLanguageStore, type AvailableLangs } from '@/stores/useLanguage'
+import { useLanguageStore, type AvailableLangs } from '@/stores/useLanguageStore'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import { getLocalizedPath } from '@/utils/getLocalizedPath'
 
@@ -32,9 +32,7 @@ const switchLang = (newLang: AvailableLangs) => {
   }
 
   langStore.language = newLang
-
   const newPath = getLocalizedPath(route.fullPath)
-
   router.push(newPath)
 }
 </script>

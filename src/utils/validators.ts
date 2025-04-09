@@ -1,5 +1,7 @@
+// TODO тесты
+
 /**
- * Валидирует email адрес
+ * Валидируем email адрес
  */
 export function validateEmail(email: string): boolean {
   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
@@ -7,7 +9,7 @@ export function validateEmail(email: string): boolean {
 }
 
 /**
- * Валидирует номер карты
+ * Валидируем номер карты
  */
 export function validateCardNumber(cardNumber: string): boolean {
   const digitsOnly = cardNumber.replace(/\D/g, '')
@@ -15,7 +17,7 @@ export function validateCardNumber(cardNumber: string): boolean {
 }
 
 /**
- * Валидирует срок действия карты в формате MM/YY
+ * Валидируем срок действия карты в формате MM/YY
  */
 export function validateExpireDate(expiryDate: string): boolean {
   const re = /^(0[1-9]|1[0-2])\/([0-9]{2})$/
@@ -37,9 +39,21 @@ export function validateExpireDate(expiryDate: string): boolean {
 }
 
 /**
- * Валидирует CVC код
+ * Валидируем CVC код
  */
 export function validateCVC(cvc: string): boolean {
   const re = /^[0-9]{3,4}$/
   return re.test(cvc)
+}
+
+/**
+ * Валидируем пароль: минимум 12 символов, буквы разного регистра и цифры
+ */
+export function validatePassword(password: string): boolean {
+  return (
+    password.length >= 12 &&
+    /[a-z]/.test(password) &&
+    /[A-Z]/.test(password) &&
+    /[0-9]/.test(password)
+  )
 }

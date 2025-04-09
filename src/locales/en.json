@@ -1,6 +1,4 @@
 {
-  "global": {},
-
   "nav": {
     "home": "Home",
     "terms": "Terms of service",
@@ -74,7 +72,8 @@
         "invalidEmail": "Invalid email format",
         "invalidCard": "Invalid card number",
         "invalidExpiry": "Invalid expiry date",
-        "invalidCVC": "Invalid CVC code"
+        "invalidCVC": "Invalid CVC code",
+        "invalidPassword": "12+ chars, up/low letters and num"
       }
     },
     "successMessage": "Account created! Please check your email."

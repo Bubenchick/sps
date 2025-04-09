@@ -1,3 +1,4 @@
+<!-- TODO хотя бы post/pre слоты для иконок + active/disabled нормально обработать -->
 <template>
   <component
     :is="tag"
@@ -43,8 +44,14 @@ const isRouterLink = computed(() => props.to != null)
 const isExternalLink = computed(() => props.href != null)
 
 const tag = computed(() => {
-  if (isRouterLink.value) return 'RouterLink'
-  if (isExternalLink.value) return 'a'
+  if (isRouterLink.value) {
+    return 'RouterLink'
+  }
+
+  if (isExternalLink.value) {
+    return 'a'
+  }
+
   return 'button'
 })
 </script>

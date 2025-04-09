@@ -1,4 +1,4 @@
-<!-- TODO разделить на два разных компонента обычный/компактный и перенести в common -->
+<!-- TODO разделить на два разных компонента обычный/компактный и перенести в common !!! -->
 <template>
   <div
     :class="[
@@ -42,8 +42,8 @@ import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseText from '@/components/ui/BaseText.vue'
 import BaseTitle from '@/components/ui/BaseTitle.vue'
 import { getLocalizedPath } from '@/utils/getLocalizedPath'
-import { useOrderStore } from '@/stores/useOrder'
-import type { PricingPlan } from './types'
+import { useOrderStore } from '@/stores/useOrderStore'
+import type { PricingPlan } from '@/stores/usePlansStore'
 
 interface IProps {
   card: PricingPlan

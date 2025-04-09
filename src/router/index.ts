@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useLanguageStore } from '@/stores/useLanguage'
-import type { AvailableLangs } from '@/stores/useLanguage'
+import { useLanguageStore } from '@/stores/useLanguageStore'
+import type { AvailableLangs } from '@/stores/useLanguageStore'
 
-// TODO надо бы с этим что-то сделать
+// TODO по хорошему не дублировать бы конечно карту
 const routes = [
   {
     path: '/',

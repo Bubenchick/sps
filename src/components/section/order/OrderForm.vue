@@ -4,57 +4,57 @@
 
     <form @submit.prevent="handleSubmit">
       <BaseInput
-        v-for="field in fields"
+        v-for="field in formFields"
         :key="field.name"
         v-model="formData[field.name]"
         :placeholder="t(`order.form.${field.name}`)"
         :type="field.type"
-        :required="field.required"
         :error-message="errors[field.name]"
       />
 
-      <BaseButton type="submit" block>
-        {{ t('order.form.createAccount') }}
-      </BaseButton>
+      <BaseText v-if="isSuccess" kind="accent">{{ t('order.successMessage') }}</BaseText>
+
+      <BaseButton type="submit" block class="order-form__submit">{{
+        t('order.form.createAccount')
+      }}</BaseButton>
     </form>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import BaseButton from '@/components/ui/BaseButton.vue'
 import BaseInput from '@/components/ui/BaseInput.vue'
+import BaseText from '@/components/ui/BaseText.vue'
 import BaseTitle from '@/components/ui/BaseTitle.vue'
-import { fields } from './fields'
+import { formFields } from './formFields'
 import { useI18n } from 'vue-i18n'
+import type { FormData, FormErrors } from './types'
 
-type FormData = Record<string, string>
-type Errors = Record<string, string>
+// TODO можно хранить имя/почту в сторе, но форма маленькая, как будто особо нет смысла
 
 const { t } = useI18n()
 
-const formData = ref<FormData>({})
-const errors = ref<Errors>({})
+const isSuccess = ref(false)
+const formData = reactive<FormData>(Object.fromEntries(formFields.map((key) => [key.name, ''])))
+const errors = reactive<FormErrors>(Object.fromEntries(formFields.map((key) => [key.name, ''])))
 
-fields.forEach((field) => {
-  formData.value[field.name] = ''
-  errors.value[field.name] = ''
-})
-
+// TODO причесать бы
 const validateForm = () => {
   let valid = true
 
-  fields.forEach(({ name, required, validator }) => {
-    const value = formData.value[name]
-    errors.value[name] = ''
+  formFields.forEach(({ name, required, validator }) => {
+    const value = formData[name]
+    errors[name] = ''
 
     if (required && !value) {
-      errors.value[name] = t('order.form.errors.required')
+      errors[name] = t('order.form.errors.required')
       valid = false
     } else if (validator) {
       const result = validator(value)
+
       if (result) {
-        errors.value[name] = t(`order.form.errors.${result}`)
+        errors[name] = t(`order.form.errors.${result}`)
         valid = false
       }
     }
@@ -65,18 +65,27 @@ const validateForm = () => {
 
 const handleSubmit = () => {
   if (validateForm()) {
-    console.log('Форма отправлена:', formData.value)
+    isSuccess.value = true
+    console.log('Success', formData)
   } else {
-    console.log('Ошибки:', errors.value)
+    console.warn('Errors:', errors)
   }
 }
 </script>
 
 <style scoped>
 .order-form {
-  min-width: 300px;
   background-color: var(--color-surface);
-  padding: 24px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 300px;
+  padding: 24px;
+}
+
+/* TODO надо убирать и резервировать место для success msg чтоб не было скачков формы */
+.order-form__submit {
+  margin-top: 28px;
 }
 </style>
