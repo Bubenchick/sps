@@ -32,7 +32,6 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineModel } from 'vue';
   import BaseButton from './BaseButton.vue';
   import BaseText from './BaseText.vue';
 

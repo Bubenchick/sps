@@ -6,13 +6,14 @@
   "scripts": {
     "prepare": "husky",
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "npm run type-check && npm run build-only",
     "preview": "vite preview",
     "test": "vitest --run",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint . --fix --ext .ts,.vue",
-    "format": "prettier --write --loglevel warn 'src/**/*.{js,ts,vue}'"
+    "format": "prettier --write --loglevel warn 'src/**/*.{js,ts,vue}'",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@vueuse/core": "^13.0.0",
